@@ -1,0 +1,211 @@
+
+#container{
+    padding: 0;
+}
+
+#main-container{
+    padding: 0px;
+}
+h1,h3,h2{
+    font-family: 'Roboto', sans-serif;
+}
+
+.left-card-label {
+    margin-left:7px;
+    margin-bottom: 10px;
+    margin-top:0px;
+    padding-bottom: 0;
+    padding-top: 0;
+    color:#A5A9A1;
+    font-size: 12px;
+    font-weight: 700;
+    margin:0;
+    padding:0;
+}
+
+
+.left-card-heading3{
+    font-weight: 500;
+    font-size: 1.17em;
+    color: #373335;
+    margin-top: 3px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.mid-card{
+    margin: 0;
+    margin-bottom: 4px;
+    padding:1;
+    min-height: 260px;
+}
+
+.md-sidenav-backdrop.md-opaque.ng-scope.md-default-theme{
+    background-color: rgba(227, 220, 228, 0)
+}
+
+
+md-sidenav,
+md-sidenav.md-locked-open,
+md-sidenav.md-closed.md-locked-open-add-active {
+    min-width: 100px !important;
+    /*width: 85vw !important;*/
+    width: 100% !important;
+    max-width: 250px !important;
+}
+
+
+
+.left-nav-element{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.left-nav-list-font{
+    font-size: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.left-side-nav-divider{
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+
+/*not ideal way to do this*/
+.md-toast-open-bottom .md-bottom{
+    position: fixed !important;
+}
+
+
+.side-nav-menu-icon{
+    margin-top: -3px;
+}
+
+.reportsSplashH6{
+    font-size: 8px;
+}
+
+@media (max-width: 1200px) {
+    .reportsSplashH6{
+        font-size: 9px;
+    }
+}
+@media (max-width: 1100px) {
+    .reportsSplashH6{
+        font-size:7px;
+    }
+}
+@media (max-width: 960px) {
+    .reportsSplashH6{
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 500px) {
+    .reportsSplashH6{
+        font-size: 6px;
+    }
+}
+
+a{
+    text-decoration:none !important;
+
+}
+
+
+
+
+.right-sidenav-black{
+    color: black;
+}
+
+.splash-black-text{
+    color: black;
+}
+
+.branding-btn{
+    margin-top: 20px !important;
+}
+
+.add-button{
+    bottom: 10px;
+    right: 10px;
+    position: fixed !important;
+}
+
+
+.dialog-box{
+    width:400px;
+    overflow-y:scroll;
+}
+
+md-select{
+    margin: -0.12em -2px 0.6em !important;
+}
+
+
+.user-email{
+    margin-top:40px;
+    margin-bottom:20px;
+
+}
+
+md-toolbar.md-default-theme{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+body{
+    font-size: 14px !important
+
+}
+
+/*#left-nav{*/
+    /*max-height: 600px*/
+/*}*/
+
+#assign-checklist md-select{
+    display: block !important;
+}
+@media (max-width: 1100px) {
+    #assign-checklist md-select{
+        display: inline-block !important;
+    }
+}
+
+@media (max-width: 960px) {
+    #assign-checklist md-select{
+        display: inline-block !important;
+    }
+}
+
+@media (max-width: 500px) {
+    #assign-checklist md-select{
+        display: inline-block !important;
+    }
+}
+
+
+.error-message{
+    color: red
+}
+
+
+.card-link{
+    color: black
+}
+
+.bulk-edit-box{
+    width: 40%;
+    text-align: center
+}
+
+.success-message{
+    color: #1ea22c;
+}
+
+.report-card{
+    width: 100%;
+    min-height: 200px;
+}

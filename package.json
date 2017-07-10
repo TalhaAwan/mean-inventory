@@ -1,0 +1,39 @@
+{
+  "name": "inventory",
+  "main": "server.js",
+  "dependencies": {
+    "async": "^1.4.0",
+    "bcrypt-nodejs": "latest",
+    "body-parser": "~1.4.2",
+    "bower": "^1.4.1",
+    "connect-multiparty": "^1.2.5",
+    "cookie-parser": "~1.0.0",
+    "couchbase": "^2.0.8",
+    "express": "~4.5.1",
+    "express-session": "latest",
+    "formidable": "^1.0.17",
+    "jsonschema": "^1.0.2",
+    "method-override": "~2.0.2",
+    "moment": "^2.11.2",
+    "mongoose": "^4.1.2",
+    "multer": "^0.1.8",
+    "nconf": "0.6.9",
+    "node-couchbase": "^0.1.4-alpha",
+    "nodemailer": "^2.1.0",
+    "nodemailer-mailgun-transport": "git+https://github.com/orliesaurus/nodemailer-mailgun-transport.git",
+    "passport": "latest",
+    "passport-local": "latest",
+    "request": "2.44.0",
+    "restler": "^3.3.0",
+    "underscore": "^1.8.3",
+    "uuid": "^2.0.1",
+    "winston": "0.7.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "./node_modules/bower/bin/bower --allow-root install"
+  },
+  "engines": {
+    "node": "0.12.9"
+  }
+}

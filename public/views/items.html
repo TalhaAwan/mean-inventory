@@ -1,0 +1,109 @@
+
+
+
+<section layout="row" flex>
+
+    <md-content flex>
+        <md-toolbar layout="row"  layout-align="start center" class="toolbar">
+
+            <div flex="100">
+                <h2 class="md-toolbar-tools">
+                    <div class="md-title">
+                        <span>ITEMS</span>
+                    </div>
+                </h2>
+            </div>
+
+        </md-toolbar>
+
+
+
+        <div  layout="row" layout-padding layout-margin >
+            <md-input-container flex>
+                <label>Search</label>
+                <input ng-model="searchText" type="text" name="search">
+            </md-input-container>
+        </div>
+
+
+
+
+        <div layout="row" layout-wrap layout-padding >
+            <div  flex="100">
+                <md-card class="md-raised">
+                    <md-card-content >
+                        <div layout="row"  layout-wrap>
+
+
+                            <div flex="35">
+                                <b>Name</b>
+                            </div>
+
+                            <div flex="20">
+                                <b>In Stock</b>
+                            </div>
+
+                            <div flex="25">
+
+                                <b>Purchase Price</b>
+                            </div>
+
+                            <div flex="20">
+
+                                <b>Sale Price</b>
+
+                            </div>
+                        </div>
+                    </md-card-content>
+                </md-card>
+            </div>
+        </div>
+
+
+
+
+        <div layout="row" layout-wrap layout-padding >
+            <div ng-repeat="item in items | filter:searchText" layout="row" flex="100">
+                <a  href="javascript:void(0)" ng-click="editItem($event, item, $index)"  class="card-link" flex>
+                    <md-card class="md-raised">
+                        <md-card-content >
+                            <div layout="row"  layout-wrap>
+                                <div flex="35">
+                                    {{item.name}}
+                                </div>
+
+                                <div flex="20">
+                                    {{item.inStock ? item.inStock : 0 }} {{item.identifyBy}}
+                                </div>
+
+                                <div flex="25">
+
+                                    {{item.purchasePrice}}
+                                </div>
+
+                                <div flex="20">
+
+                                    {{item.salePrice}}
+
+                                </div>
+                            </div>
+
+                        </md-card-content>
+                    </md-card>
+                </a>
+            </div>
+
+        </div>
+
+        <div layout="row" layout-align="end end" class="add-button">
+
+            <md-button class="md-fab" ng-click="openAddItemDialog($event)" aria-label="Eat cake">
+
+                <img src="/images/add_white.png" style="width: 24px; height: 24px;">
+            </md-button>
+        </div>
+
+    </md-content>
+
+
+</section>

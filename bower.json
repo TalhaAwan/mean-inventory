@@ -1,0 +1,23 @@
+{
+  "name": "inventory",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "3.3.5",
+    "angular-datepicker": "~1.0.12",
+    "ng-file-upload": "~4.2.4",
+    "angular-drag-and-drop-lists": "~1.2.0",
+    "ngInfiniteScroll": "1.0.0",
+    "angular-schema-form-datepicker": "~0.4.0",
+    "jquery-ui": "~1.11.4",
+    "datetimepicker": "~2.4.5",
+    "highcharts-ng": "~0.0.8",
+    "highcharts-release": "~4.1.7",
+    "angular-material": "~0.10.1",
+    "angular": "~1.4.4",
+    "angular-route": "~1.4.4"
+  },
+  "resolutions": {
+    "angular": "~1.4.4",
+    "angular-route": "~1.4.4"
+  }
+}
