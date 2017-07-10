@@ -20,7 +20,7 @@ A general purpose inventory management web application. Built with MongoDB, Expr
 
 ## Future Additions / New Versions
 - Graph representation of current stock/inventory
-- Download inventory as csv/xml
+- Download inventory as csv/xlsx
 - Create a new desktop version of this app with Electron (for desktop app, maybe use file system instead of mongodb) 
 
 
