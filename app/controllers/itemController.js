@@ -2,13 +2,9 @@
  * Created by talha on 8/14/15.
  */
 
+var async = require('async');
+var Item = require('../models/Item');
 module.exports = function(app) {
-
-    //var qr = require('qr-image');
-    var async = require('async');
-    var nodemailer = require('nodemailer');
-    var mg = require('nodemailer-mailgun-transport');
-    var Item = require('../models/Item');
 
     var Controller = {
         name: 'Item'
@@ -46,17 +42,8 @@ module.exports = function(app) {
                 console.log(err)
             }
             else{
-                Item.find({}, function (err, docs) {
-                    if(err){
-                        res.send(err);
-                    }
-                    else if(docs.length){
-                        res.send(docs);
-                    }
-                    else{
-                        res.send([]);
-                    }
-                })
+                res.send(createdItem);
+            
             }
         })
     };
@@ -76,46 +63,11 @@ module.exports = function(app) {
     };
 
 
-    Controller.bulkEditItems = function(req, res) {
-
-        async.each(req.body, function(item, callback) {
-            Item.findOneAndUpdate({_id: item._id}, item, function(err, item) {
-                if(err) {
-                    callback(err)
-                }
-                else{
-                    callback()
-                }
-            })
-
-        }, function(err){
-            if(err){
-                res.send(err);
-            }
-            else{
-                Item.find({}, function (err, docs) {
-                    if(err){
-                        res.send(err);
-                    }
-                    else if(docs.length){
-                        res.send(docs);
-                    }
-                    else{
-                        res.send([]);
-                    }
-                })
-            }
-        })
-
-    };
-
-
 
     Controller.getItems = function(req, res) {
         var input = req.params.search;
-        console.log("input", input);
-
         var query = input? {name: new RegExp(input, "i")} : {};
+
         console.log(query)
         Item.find(query, function(err, docs) {
             if(err){

@@ -30,10 +30,8 @@ angular.module('inventoryApp').controller('ItemController', function($scope, Ite
             templateUrl: '/views/dialogs/add-item.html',
             targetEvent: ev
         })
-            .then(function(items) {
-                if(items.length > 0){
-                    $scope.items = items
-                }
+            .then(function(item) {
+                $scope.items.push(item);
             }, function() {
             });
     };

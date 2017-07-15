@@ -31,7 +31,7 @@ angular.module('inventoryApp').factory('Item', ['$http', function($http) {
         },
 
         getItems: function (searchText, success, error) {
-            $http.get('/items/search/?search='+searchText).
+            $http.get('/items/?search='+searchText).
                 then(function (data) {
                     success(data)
                 }, function (e) {
