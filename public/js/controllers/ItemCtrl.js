@@ -30,8 +30,8 @@ angular.module('inventoryApp').controller('ItemController', function($scope, Ite
             templateUrl: '/views/dialogs/add-item.html',
             targetEvent: ev
         })
-            .then(function(item) {
-                $scope.items.push(item);
+            .then(function(result) {
+                $scope.items.push(result.data);
             }, function() {
             });
     };
