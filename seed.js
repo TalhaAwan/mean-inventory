@@ -8,7 +8,6 @@ var mongoose       = require('mongoose');
 var db = require('./config/db');
 
 mongoose.connect(db.url);
-var Sale = require('../inventory/app/models/Sale');
 var Item = require('../inventory/app/models/Item');
 var async = require('async');
 var items = require('./items.json');

@@ -111,9 +111,13 @@ module.exports = function(app) {
 
 
 
-    Controller.searchItems = function(req, res) {
-        var input = req.params.searchText;
-        Item.find({name: new RegExp(input, "i")}, function(err, docs) {
+    Controller.getItems = function(req, res) {
+        var input = req.params.search;
+        console.log("input", input);
+
+        var query = input? {name: new RegExp(input, "i")} : {};
+        console.log(query)
+        Item.find(query, function(err, docs) {
             if(err){
                 res.send(err);
             }
@@ -127,19 +131,7 @@ module.exports = function(app) {
 
     };
 
-    Controller.getItems = function(req, res) {
-        Item.find({}, function (err, docs) {
-            if(err){
-                res.send(err);
-            }
-            else if(docs.length){
-                res.send(docs);
-            }
-            else{
-                res.send([]);
-            }
-        })
-    };
+
 
     return Controller;
 }

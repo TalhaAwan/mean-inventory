@@ -6,30 +6,21 @@
 
 angular.module('inventoryApp').controller('ItemController', function($scope, Item, $mdDialog, $timeout) {
 
-    Item.getItems(function(data){
-        $scope.items = data
+    Item.getItems("", function(result){
+        $scope.items = result.data
     },
     function(err){
         console.log(err)
     });
 
     $scope.searchTextChanged = function(){
-        if($scope.searchText && $scope.searchText.split('.')[0]){
-            Item.searchItems($scope.searchText, function(data){
-                    $scope.items = data
-                },
-                function(err){
-                    console.log(err)
-                })
-        }
-        else{
-            Item.getItems(function(data){
-                    $scope.items = data
-                },
-                function(err){
-                    console.log(err)
-                })
-        }
+      Item.getItems($scope.searchText, function(result){
+        $scope.items = result.data
+    },
+    function(err){
+        console.log(err)
+    })
+
     }
 
 

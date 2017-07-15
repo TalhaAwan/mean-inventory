@@ -14,7 +14,6 @@ module.exports = function(app) {
     app.delete('/items/:id', itemsController.deleteItem);
     app.put('/items/', itemsController.editItem);
     app.get('/items/', itemsController.getItems);
-    app.get('/items/search/:searchText', itemsController.searchItems);
 
  
 	app.get('*', function(req, res) {
