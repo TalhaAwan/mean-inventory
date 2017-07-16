@@ -1,8 +1,9 @@
 # Inventory Management Web Application
 
-A general purpose inventory management web application. Built with MongoDB, Express, Angular + Angular Material Design and Node (MEAN) 
+A general purpose inventory management web application. Built with MongoDB, Express, Angular + Angular Material Design and Node (MEAN). [Demo](https://meaninventory.herokuapp.com/) for electric store inventory (wait a few seconds for sleeping heroku to wake up).
 
-## Instructions to run
+
+## Instructions to run locally
 
 1. Download/Clone the repository
 2. `npm install` to install npm modules (which will automatically install bower dependencies. But you can separately run with `bower install`)
