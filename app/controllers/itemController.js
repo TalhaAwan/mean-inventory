@@ -14,7 +14,7 @@ module.exports = function(app) {
 
         Item.remove({_id: req.params.id}, function(err, result) {
             if(err) {
-                console.log(err)
+                return res.status(500).json({});
             }
             else{
                 Item.find({}, function (err, docs) {
@@ -39,7 +39,7 @@ module.exports = function(app) {
 
         item.save(function(err, createdItem) {
             if(err) {
-                console.log(err)
+                return res.status(500).json({});
             }
             else{
                 res.send(createdItem);
@@ -54,7 +54,7 @@ module.exports = function(app) {
 
         Item.findOneAndUpdate({_id: req.body._id}, req.body, {"new": true}, function(err, item) {
             if(err) {
-                res.send(err);
+                return res.status(500).json({});
             }
             else{
                 res.send(item);
@@ -70,7 +70,7 @@ module.exports = function(app) {
 
         Item.find(query, function(err, docs) {
             if(err){
-                res.send(err);
+                return res.status(500).json({});
             }
             else if(docs.length){
                 res.send(docs);
