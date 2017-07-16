@@ -64,7 +64,7 @@
 
         <div layout="row" layout-wrap layout-padding >
             <div ng-repeat="item in items | filter:searchText" layout="row" flex="100">
-                <a  href="javascript:void(0)" ng-click="editItem($event, item, $index)"  class="card-link" flex>
+                <a  href="javascript:void(0)" ng-click="editItem($event, item, items.indexOf(item))"  class="card-link" flex>
                     <md-card class="md-raised">
                         <md-card-content >
                             <div layout="row"  layout-wrap>

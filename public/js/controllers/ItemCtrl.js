@@ -4,18 +4,20 @@
 
 'use strict';
 
-angular.module('inventoryApp').controller('ItemController', function($scope, Item, $mdDialog, $timeout) {
+angular.module('inventoryApp').controller('ItemController', function($scope, Item, $mdDialog, $filter, $timeout) {
 
     Item.getItems("", function(result){
-        $scope.items = result.data
+        $scope.items = result.data;
     },
     function(err){
         console.log(err)
     });
 
+
+    //TODO Integrate database search
     $scope.searchTextChanged = function(){
       Item.getItems($scope.searchText, function(result){
-        $scope.items = result.data
+        $scope.items = result.data;
     },
     function(err){
         console.log(err)
@@ -31,8 +33,12 @@ angular.module('inventoryApp').controller('ItemController', function($scope, Ite
             targetEvent: ev
         })
             .then(function(result) {
-                $scope.items.push(result.data);
+                if(result.status == 200){
+                    $scope.items.push(result.data);
+                }
+
             }, function() {
+                console.log("Dialog Cancelled");
             });
     };
 
@@ -48,15 +54,19 @@ angular.module('inventoryApp').controller('ItemController', function($scope, Ite
             targetEvent: ev
         })
             .then(function(result) {
-                if(item){
-                    $scope.items[index] = result.data;
-                }
-            }, function() {
+                if(result.status == 200){
+                    if(result.data){
+                        $scope.items[index] = result.data;
+                    }
+                    else{
+                        $scope.items.splice(index, 1);
+                    }
+                }            
+            }, function(){
+                console.log("Dialog Cancelled");
+
             });
 
-        $timeout(function(){
-            item.editClicked = false;
-        }, 100)
     };
 
 
@@ -68,12 +78,13 @@ function AddItemController ($scope, $mdDialog, Item){
     $scope.addItem = function(){
         Item.addItem($scope.item, function(data){
             $mdDialog.hide(data);
-        }, function(){
-
+        }, function(err){
+            console.log(err);
+            $mdDialog.hide();
         })
     }
     $scope.closeDialog = function () {
-        $mdDialog.hide([]);
+        $mdDialog.cancel();
     }
 }
 
@@ -82,11 +93,11 @@ function EditItemController ($scope, $mdDialog, item, Item){
     $scope.item = item;
     $scope.deleteItem = function(ev, item){
         Item.deleteItem($scope.item._id, function(data){
-                console.log(data);
                 $mdDialog.hide(data);
             },
             function(err){
                 console.log(err)
+                $mdDialog.hide(err);
             })
     };
 
@@ -94,12 +105,14 @@ function EditItemController ($scope, $mdDialog, item, Item){
     $scope.editItem = function(){
         Item.editItem($scope.item, function(data){
             $mdDialog.hide(data);
-        }, function(error){
-            console.log(error)
+        }, function(err){
+            console.log(err)
+            $mdDialog.hide(err);
+
         })
     }
 
     $scope.closeDialog = function () {
-        $mdDialog.hide();
+        $mdDialog.cancel();
     }
 }

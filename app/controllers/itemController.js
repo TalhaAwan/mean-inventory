@@ -17,17 +17,7 @@ module.exports = function(app) {
                 return res.status(500).json({});
             }
             else{
-                Item.find({}, function (err, docs) {
-                    if(err){
-                        res.send(err);
-                    }
-                    else if(docs.length > 0){
-                        res.send(docs);
-                    }
-                    else{
-                        res.send([]);
-                    }
-                })
+                return res.status(200).json({});
             }
         });
     };
@@ -78,7 +68,7 @@ module.exports = function(app) {
             else{
                 res.send([]);
             }
-        });
+        }).sort('name');
 
     };
 
