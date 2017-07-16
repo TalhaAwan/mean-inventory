@@ -1,6 +1,6 @@
 # Inventory Management Web Application
 
-A general purpose inventory management web application. Built with MongoDB, Express, Angular + Angular Material Design and Node (MEAN). [Demo](https://meaninventory.herokuapp.com/) for electric store inventory (wait a few seconds for sleeping heroku to wake up).
+A general purpose inventory management web application. Built with MongoDB, Express, Angular + Angular Material Design and Node (MEAN). [Demo](https://meaninventory.herokuapp.com/) for electric store inventory (heroku will take a few seconds to load in sleep mode).
 
 
 ## Instructions to run locally
