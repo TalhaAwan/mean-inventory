@@ -44,11 +44,3 @@ async.each(items, function(itemDoc, callback) {
     }
 })
 
-//Item.update({}, {identifyBy: "pc"}, {multi: true}, function(err, result){
-//    if(err){
-//        console.log(err)
-//    }
-//    else{
-//        console.log("success")
-//    }
-//})
