@@ -47,9 +47,9 @@ angular.module('inventoryApp').controller('ItemController', function($scope, Ite
             },
             targetEvent: ev
         })
-            .then(function(item) {
+            .then(function(result) {
                 if(item){
-                    $scope.items[index] = item;
+                    $scope.items[index] = result.data;
                 }
             }, function() {
             });

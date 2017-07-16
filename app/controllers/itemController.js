@@ -68,7 +68,6 @@ module.exports = function(app) {
         var input = req.params.search;
         var query = input? {name: new RegExp(input, "i")} : {};
 
-        console.log(query)
         Item.find(query, function(err, docs) {
             if(err){
                 res.send(err);
